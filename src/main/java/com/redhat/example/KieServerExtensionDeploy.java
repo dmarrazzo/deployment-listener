@@ -35,10 +35,9 @@ public class KieServerExtensionDeploy implements KieServerExtension {
     @Override
     public void init(KieServerImpl kieServer, KieServerRegistry registry) {
 
-        // Prometheus Monitoring
+        // JBPM
         KieServerExtension jBPMExtension = registry.getServerExtension(JbpmKieServerExtension.EXTENSION_NAME);
         if (jBPMExtension != null) {
-
             final KModuleDeploymentService deploymentService = jBPMExtension
                     .getAppComponents(KModuleDeploymentService.class);
             if (deploymentService != null) {
@@ -55,6 +54,7 @@ public class KieServerExtensionDeploy implements KieServerExtension {
 
     @Override
     public void createContainer(String id, KieContainerInstance kieContainerInstance, Map<String, Object> parameters) {
+        System.out.println("KieServerExtensionDeploy.createContainer() " + id);
     }
 
     @Override
