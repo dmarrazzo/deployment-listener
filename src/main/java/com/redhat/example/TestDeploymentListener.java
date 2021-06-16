@@ -26,6 +26,6 @@ public class TestDeploymentListener implements DeploymentEventListener {
     }
 
     private void onEvent(DeploymentEvent event) {
-        System.out.println("TestDeploymentListener.onEvent() " + event);
+        System.out.println("TestDeploymentListener.onEvent() " + event.getDeploymentId());
     }
 }
